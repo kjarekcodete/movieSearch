@@ -1,21 +1,15 @@
-import React, {useEffect, useState}  from "react";
-import {getMovies} from "../lib/api/getMovies";
+import React, {useState}  from "react";
+import {useHistory} from "react-router";
 
 
 const SearchInput = () => {
+    const history = useHistory();
     const [keyword, setKeyword] = useState('');
     const updateSearch = (e) => {
-      setKeyword(e.target.value);
+      setKeyword(e.target.value.toLowerCase());
     }
-
-    const search = async () => {
-        console.log(keyword)
-        try{
-            const movies = await getMovies(keyword);
-            console.log(movies);
-        } catch (err) {
-            console.log(err)
-        }
+    const search =  () => {
+        history.push(`/movie-list/${keyword}`);
     }
     return <>
         <input name="search" type="text" value={keyword} onChange={updateSearch}/>
