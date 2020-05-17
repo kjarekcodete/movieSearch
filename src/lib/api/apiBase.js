@@ -10,6 +10,7 @@ const http = axios.create({
 http.interceptors.request.use(config => {
     config.params = {
         apikey: apiKey,
+        type: ['movie', 'series', 'episode'],
         ...config.params,
     };
     return config;
