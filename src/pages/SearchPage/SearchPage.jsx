@@ -1,6 +1,6 @@
 import React, {useState}  from "react";
 import {useHistory} from "react-router";
-import './searchPage.scss';
+import './SearchPage.scss';
 
 const SearchPage = () => {
     const history = useHistory();
