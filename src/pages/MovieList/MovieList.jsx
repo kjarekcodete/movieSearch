@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {getMovies} from "../lib/api/getMovies";
-import MovieContext from "../context/movieContext";
+import {getMovies} from "../../lib/api/getMovies";
+import MovieContext from "../../context/movieContext";
 import {useParams} from "react-router";
-import MovieTile from "../components/movieTile";
+import MovieTile from "../../components/MovieTile";
 
 const MovieList = () => {
     const {movies, updateMovies} = useContext(MovieContext);
@@ -15,7 +15,7 @@ const MovieList = () => {
             setResults(movies[title])
         } else {
             try {
-                const {data} = await getMovies(title);
+                const {data} = await getMovies(title, year);
                 const searchResult = data.Search.filter(el => el.Type !== 'game');
                 setResults(searchResult)
 
@@ -23,12 +23,11 @@ const MovieList = () => {
                 newMovie[title] = searchResult;
                 updateMovies(newMovie)
             } catch(err){
-                console.log(err);
             }
         }
     }
 
-    useEffect(() => { checkIfExist(titleKey) }, [title,year])
+    useEffect(() => { checkIfExist(titleKey) }, [titleKey])
 
     return <div>
         { results && results.map(el =>  <MovieTile key={el.imdbID} {...el}/>)}

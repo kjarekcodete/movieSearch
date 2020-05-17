@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState, useCallback} from 'react';
-import MovieContext from "../context/movieContext";
-import {getMovie} from "../lib/api/getMovies";
+import MovieContext from "../../context/movieContext";
+import {getMovie} from "../../lib/api/getMovies";
 import {useParams} from "react-router";
 
 const Movie = () => {
@@ -21,7 +21,7 @@ const Movie = () => {
         } else {
             fetchDetails();
         }
-    }, [fetchDetails, movieId])
+    }, [fetchDetails, movieId, details])
 
 
     return <div>

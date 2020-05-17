@@ -3,10 +3,10 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import './App.css';
-import SearchPage from "./pages/searchPage";
-import MovieList from "./pages/movieList";
-import Movie from "./pages/movie";
+import './App.scss';
+import SearchPage from "./pages/SearchPage/SearchPage";
+import MovieList from "./pages/MovieList/MovieList";
+import Movie from "./pages/Movie/Movie";
 
 import {MovieProvider} from "./context/movieContext";
 
