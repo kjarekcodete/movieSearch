@@ -1,6 +1,6 @@
 import {http} from './apiBase';
 
-const getMovies = (movieTitle, year) => http.get('', { params: {
+const getMovies = (movieTitle, year = '') => http.get('', { params: {
     s: movieTitle,
     y: year
     }});
