@@ -30,7 +30,7 @@ const SearchPage = () => {
       <h1>Movie Search App</h1>
     </header>
     <main className="search-page-content">
-      <form className="form-inline" onSubmit={submition}>
+      <form className="form-inline d-flex flex-column flex-md-row" onSubmit={submition}>
         <div className="form-group mx-sm-3 mb-2">
           <label form="movieTitle" className="sr-only">Movie title</label>
           <input className="form-control" name="movieTitle" data-testid="movieTitle" type="text"
