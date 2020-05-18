@@ -8,15 +8,15 @@ const SearchPage = () => {
   const [year, setYear] = useState('');
   const [error, setError] = useState(null)
   const updateSearch = (e) => {
-    setKeyword(e.target.value.toLowerCase());
+    setKeyword(e.target.value);
   }
   const updateYear = (e) => {
-    setYear(e.target.value.toLowerCase());
+    setYear(e.target.value);
   }
   const submition = (e) => {
     e.preventDefault();
     if (keyword.length) {
-      let url = `/movie-list/${keyword}`
+      let url = `/movie-list/${keyword.toLowerCase()}`
       if (year.length) url += `/${year}`;
       history.push(url);
       setError(null);

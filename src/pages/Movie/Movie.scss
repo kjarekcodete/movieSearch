@@ -2,7 +2,11 @@
 
 .movie-page {
   margin: auto;
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   &-header {
     display: flex;
     padding: 20px;

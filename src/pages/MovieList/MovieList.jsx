@@ -42,17 +42,18 @@ const MovieList = () => {
   }, [title, titleKey, year, checkIfExist])
 
     return <section className='container list-page'>
-        <PageHeader customClassName={"dark-background"} title={`You serched ${title}`}/>
-        <main className='list-page-results'>
-            {loader ? <Loader/>:
+        <div className="row">
+            <PageHeader customClassName={"dark-background col-12"} title={`You searched ${title}`}/>
+            {loader ? <Loader/> :
               (results && results.map(el => <MovieTile key={el.imdbID} {...el}/>))
             }
-
-
-        </main>
+        </div>
 
     </section>
 }
+
+
+
 
 
 

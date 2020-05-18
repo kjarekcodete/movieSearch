@@ -2,12 +2,17 @@ import React, {useState, useEffect} from "react";
 import {useHistory} from "react-router";
 
 
-const BackButton = () => {
+const BackButton = ({path}) => {
   const history = useHistory();
   const [sameDomain, setSameDomain] = useState(true)
 
   const goBack = () => {
-    sameDomain ? history.goBack() : history.push('/');
+    if(path) {
+      history.push(path);
+    } else {
+      sameDomain ? history.goBack() : history.push('/');
+    }
+
   }
 
   useEffect(() => {
