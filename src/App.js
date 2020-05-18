@@ -7,10 +7,11 @@ import './App.scss';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import MovieList from "./pages/MovieList/MovieList";
 import Movie from "./pages/Movie/Movie";
+import NotFound from "./pages/NotFound/NotFound";
 
 import {MovieProvider} from "./context/movieContext";
 
-import MOVIES from "./mock";
+import {MOVIES} from "./mock";
 
 const App = () => {
     const [movies, setMovies] = useState(MOVIES);
@@ -29,9 +30,10 @@ const App = () => {
       updateDetails
   }}>
       <Switch>
-          <Route  path="/movie-list/:title/:year?"><MovieList/></Route>
-          <Route  path="/movie/:movieId"><Movie/></Route>
-          <Route path="/"> <SearchPage/> </Route>
+          <Route exact={true} path="/movie-list/:title/:year?"><MovieList/></Route>
+          <Route exact={true} path="/movie/:movieId"><Movie/></Route>
+          <Route exact={true} path="/"> <SearchPage/> </Route>
+          <Route exact={true} path="*"> <NotFound/> </Route>
       </Switch>
   </MovieProvider>
 }
