@@ -1,0 +1,10 @@
+.list-page{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  &-results{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
