@@ -17,7 +17,6 @@ const Movie = () => {
   const [movieError, setMovieError] = useState(null);
   const fetchDetails = useCallback(async () => {
     try {
-      setLoader(true)
       const {data} = await getMovie(movieId);
       if (data.Error) {
         setMovieError('we are unable to find more information')
@@ -36,6 +35,7 @@ const Movie = () => {
 
 
   useEffect(() => {
+    setLoader(true);
     if (details[movieId]) {
       setMovieDescription(details[movieId]);
     } else {
