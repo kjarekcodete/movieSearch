@@ -1,17 +1,19 @@
-.search-page{
+.search-page {
   margin: auto;
   min-height: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  &-content{
+
+  &-content {
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  &-header{
+
+  &-header {
     padding: 20px 0 20px;
     text-align: center;
   }

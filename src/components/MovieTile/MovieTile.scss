@@ -1,15 +1,18 @@
-.movie-tile{
+.movie-tile {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   flex-wrap: wrap;
+
   &-poster {
     width: 120px;
     height: 170px;
   }
-  &-description{
+
+  &-description {
     margin-left: 20px;
-    >button{
+
+    > button {
       margin-top: 10px;
     }
   }

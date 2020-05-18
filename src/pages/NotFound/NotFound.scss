@@ -1,11 +1,12 @@
-.not-found{
+.not-found {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   padding: 40px;
-  &-info{
+
+  &-info {
     text-align: center;
     font-size: 1.5rem;
   }

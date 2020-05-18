@@ -1,15 +1,17 @@
 @import '../../styles/variables';
 
-.page-header  {
+.page-header {
   display: flex;
   padding: 20px;
   justify-content: center;
   margin: 20px 0;
   width: 100%;
-  > button{
+
+  > button {
     margin-right: auto;
   }
-  >h1{
+
+  > h1 {
     margin-right: auto;
     text-transform: capitalize;
     margin-bottom: 0;
