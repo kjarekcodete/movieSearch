@@ -4,16 +4,16 @@ const baseURL = 'http://www.omdbapi.com/';
 const apiKey = '157f34ed';
 
 const http = axios.create({
-    baseURL,
+  baseURL,
 })
 
 http.interceptors.request.use(config => {
-    config.params = {
-        apikey: apiKey,
-        type: ['movie', 'series', 'episode'],
-        ...config.params,
-    };
-    return config;
+  config.params = {
+    apikey: apiKey,
+    type: ['movie', 'series', 'episode'],
+    ...config.params,
+  };
+  return config;
 });
 
 

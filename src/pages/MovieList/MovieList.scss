@@ -1,8 +1,9 @@
-.list-page{
+.list-page {
   display: flex;
   margin: auto;
   flex-direction: column;
-  &-results{
+
+  &-results {
     display: flex;
     flex-direction: column;
     width: 100%;

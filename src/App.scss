@@ -1,10 +1,11 @@
 @import "styles/variables";
 
-#root{
+#root {
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
 }
-.dark-background{
+
+.dark-background {
   background-color: $elements-bg;
 }
