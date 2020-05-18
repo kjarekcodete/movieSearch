@@ -3,6 +3,8 @@ import {getMovies} from "../../lib/api/getMovies";
 import MovieContext from "../../context/movieContext";
 import {useParams} from "react-router";
 import MovieTile from "../../components/MovieTile/MovieTile";
+import PageHeader from "../../components/PageHeader/PageHeader";
+
 
 const MovieList = () => {
     const {movies, updateMovies} = useContext(MovieContext);
@@ -24,14 +26,12 @@ const MovieList = () => {
             } catch(err){
             }
         }
-    }, [title, titleKey, year])
+    }, [updateMovies, movies])
 
     useEffect(() => { checkIfExist(title, titleKey, year) }, [title, titleKey, year, checkIfExist])
 
     return <section className='container list-page'>
-        <header className="list-page-header dark-background">
-            <h1>Search results: {title}</h1>
-        </header>
+        <PageHeader customClassName={"movie-page-header dark-background"} title={title}/>
         <main className='list-page-results'>
             { results && results.map(el =>  <MovieTile key={el.imdbID} {...el}/>)}
         </main>
