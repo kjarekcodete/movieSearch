@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://www.omdbapi.com/';
+const baseURL = 'https://www.omdbapi.com/';
 const apiKey = '157f34ed';
 
 const http = axios.create({

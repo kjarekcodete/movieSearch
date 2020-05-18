@@ -52,7 +52,7 @@ const Movie = () => {
                     title={!movieError ? movieDescription.Title : movieError}/>
         {!movieError && <section className="col-12 movie-page-content dark-background ">
           <img className="movie-page-poster"
-               onError={(e)=>{e.target.onerror = null; e.target.src="http://via.placeholder.com/300x450"}}
+               onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/300x450"}}
                src={movieDescription.Poster}
                alt={movieDescription.Title}/>
           <main className="movie-page-description">
