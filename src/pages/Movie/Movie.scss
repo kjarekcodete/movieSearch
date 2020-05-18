@@ -1,19 +1,24 @@
 @import '../../styles/variables';
-.movie-page{
+
+.movie-page {
   margin: auto;
-  &-header{
+
+  &-header {
     display: flex;
     padding: 20px;
     justify-content: center;
     margin-bottom: 20px;
-    > button{
+
+    > button {
       margin-right: auto;
     }
-    >h1{
+
+    > h1 {
       margin-right: auto;
     }
   }
-  &-content{
+
+  &-content {
     display: flex;
     @include media-breakpoint-down(sm) {
       flex-wrap: wrap;
@@ -22,19 +27,21 @@
     }
 
   }
-  &-description{
+
+  &-description {
     width: auto;
     padding: 20px;
   }
-  &-info{
-      display: grid;
-      grid-template-columns: max-content auto;
+
+  &-info {
+    display: grid;
+    grid-template-columns: max-content auto;
 
     > dt {
       grid-column-start: 1;
     }
 
-   > dd {
+    > dd {
       grid-column-start: 2;
       margin-left: 10px;
     }

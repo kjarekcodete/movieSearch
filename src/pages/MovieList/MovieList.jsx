@@ -5,6 +5,7 @@ import MovieContext from "../../context/movieContext";
 import {useParams} from "react-router";
 import MovieTile from "../../components/MovieTile/MovieTile";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Loader from "../../components/Loader/Loader";
 
 import './MovieList.scss';
 
@@ -36,14 +37,14 @@ const MovieList = () => {
         }
     }, [updateMovies, movies, history, setLoader])
 
-    useEffect(() => { checkIfExist(title, titleKey, year) }, [title, titleKey, year, checkIfExist])
+  useEffect(() => {
+    checkIfExist(title, titleKey, year)
+  }, [title, titleKey, year, checkIfExist])
 
     return <section className='container list-page'>
         <PageHeader customClassName={"dark-background"} title={`You serched ${title}`}/>
         <main className='list-page-results'>
-            {loader ? <div className="spinner-border text-light text-center" role="status">
-                  <span className="sr-only">Loading...</span>
-              </div> :
+            {loader ? <Loader/>:
               (results && results.map(el => <MovieTile key={el.imdbID} {...el}/>))
             }
 
