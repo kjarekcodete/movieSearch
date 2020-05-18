@@ -38,6 +38,7 @@ const Movie = () => {
     setLoader(true);
     if (details[movieId]) {
       setMovieDescription(details[movieId]);
+      setLoader(false);
     } else {
       fetchDetails();
     }
