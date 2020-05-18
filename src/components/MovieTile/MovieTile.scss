@@ -1,17 +1,47 @@
+@import '../../styles/variables';
+
 .movie-tile {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  width: 100%;
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    padding: 10px;
+  }
+
 
   &-poster {
     width: 120px;
     height: 170px;
+    @include media-breakpoint-up(sm) {
+      margin-left: -15px;
+    }
   }
 
   &-description {
     margin-left: 20px;
+    @include media-breakpoint-down(xs) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
 
+    }
+    > h3{
+      font-size: 1.125rem;
+      @include media-breakpoint-down(sm) {
+        width: 200px;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+    }
     > button {
       margin-top: 10px;
     }
