@@ -1,7 +1,16 @@
 @import '../../styles/variables';
 
-header {
+.page-header  {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+  > button{
+    margin-right: auto;
+  }
   >h1{
+    margin-right: auto;
     text-transform: capitalize;
     margin-bottom: 0;
     @include media-breakpoint-down(sm) {

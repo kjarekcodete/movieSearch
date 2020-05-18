@@ -11,9 +11,8 @@ const MovieTile = ({imdbID, Title, Poster, Year }) => {
     return <div  className="movie-tile dark-background" >
             <img className="movie-tile-poster" src={Poster}
                  alt={Title} />
-        <section>
-            <h2>{Title}</h2>
-            <h3>{Year}</h3>
+        <section className="movie-tile-description">
+            <h3>{Title} / {Year}</h3>
             <button className='btn btn-primary' data-testid="read-more" onClick={showDetails}>Read More</button>
         </section>
 
