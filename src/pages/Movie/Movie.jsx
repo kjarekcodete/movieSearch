@@ -46,10 +46,10 @@ const Movie = () => {
   return <article className="container movie-page">
     {
       loader ? <Loader/>
-      : <>
-        <PageHeader customClassName={"movie-page-header dark-background"}
+      : <section className="row">
+        <PageHeader customClassName={"col-12 movie-page-header dark-background"}
                     title={!movieError ? movieDescription.Title : movieError}/>
-        {!movieError && <section className="movie-page-content dark-background ">
+        {!movieError && <section className="col-12 movie-page-content dark-background ">
           <img className="movie-page-poster"
                onError={(e)=>{e.target.onerror = null; e.target.src="http://via.placeholder.com/300x450"}}
                src={movieDescription.Poster}
@@ -76,7 +76,7 @@ const Movie = () => {
             </p>
           </main>
         </section>}
-        </>
+        </section>
 
     }
 

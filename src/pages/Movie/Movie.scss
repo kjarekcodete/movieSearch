@@ -31,6 +31,11 @@
     }
 
   }
+  &-poster{
+    @include media-breakpoint-up(sm) {
+      margin-left: -15px;
+    }
+  }
 
   &-description {
     width: auto;

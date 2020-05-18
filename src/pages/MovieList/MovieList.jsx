@@ -7,8 +7,6 @@ import MovieTile from "../../components/MovieTile/MovieTile";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Loader from "../../components/Loader/Loader";
 
-import './MovieList.scss';
-
 
 const MovieList = () => {
     const {movies, updateMovies} = useContext(MovieContext);
@@ -42,7 +40,7 @@ const MovieList = () => {
   }, [title, titleKey, year, checkIfExist])
 
     return <section className='container list-page'>
-        <div className="row">
+        <div className="row justify-content-center align-content-center">
             <PageHeader customClassName={"dark-background col-12"} title={`You searched ${title}`}/>
             {loader ? <Loader/> :
               (results && results.map(el => <MovieTile key={el.imdbID} {...el}/>))
